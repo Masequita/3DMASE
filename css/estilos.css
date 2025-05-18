@@ -7,13 +7,19 @@
     object-fit: cover;
     filter: brightness(0.6);
 }
+.c-itemP{
+    height: 600px;
+}
 .c-imgP{
+
     height: 100%;
     object-fit: cover;
+    width: 50px;
 }
 
 .c-logo{
     width: 50px;
+    margin: 0;
 }
 .c-logoText{
     font-weight: 600;
@@ -35,7 +41,7 @@
     color: #0c0c0c;
 }
 .no-margin{
-    margin: 0%;
+    margin: 0;
 }
 .header{
 
@@ -211,3 +217,59 @@ a:hover{
     color: rgb(204, 204, 204);
     background-color: #161616;
   }
+.container-comprar{
+  background-color: white;
+  margin-top: 35px;
+
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 1.25rem;
+  border-radius: 3rem;
+  margin-bottom: 35px;
+}
+.compra-titulo{
+  text-transform:uppercase;
+  padding: 0;
+  margin: 0;
+  
+}
+.c-linea{
+  height: 5px;                 /* Grosor de la línea */
+            background-color: black;     /* Color de la línea */
+            border: none;                /* Quitar bordes por defecto */
+            margin-bottom: 20px;
+            margin-top: 15px;          
+            margin-left: 150px;
+            margin-right: 150px;      /* Espacio arriba y abajo */
+}
+.compra-bg{
+  background-color: #d8d8d8;
+}
+.compra-info{
+display: flex;
+flex-direction: row;
+justify-content: center;
+  align-items: center;
+  height:600px;
+
+}
+
+.compra-der{
+  width: 50%;
+  height: 100%;
+  margin: 10px;
+}
+.compra-izq{
+  width: 50%;
+  height: 100%;
+  margin: 10px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  
+}
+.btn-comprar{
+  text-align: center;
+  font-size: 25px;
+  width: 100%;
+  height: 70px;
+  margin-bottom: 15px;
+}

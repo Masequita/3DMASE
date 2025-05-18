@@ -7,23 +7,32 @@ include("admin/acciones/lista_de_productos.php");
             $n=1;
             $productos = obtenerProductos($conexion);
             foreach($productos as $producto) { ?>
-            <tr id="producto-<?php echo $producto['id']; ?>">
-               <td class="text-center"><?=$n++ ;?></td>
-               <td class="text-center"><?php echo $producto['nombre']; ?></td>
-               <td class="text-center"><?php echo $producto['descripcion_corta']; ?></td>
-               <td class="text-center"><?php echo $producto['descripcion_larga']; ?></td>
-               <td class="text-center"><?php echo $producto['precio']; ?>$</td>
-               <td class="text-center"><?php echo $producto['cantidad']; ?></td>
-                <td>
-                     <a href="acciones/editar.php?id=<?php echo $producto['id']; ?>" class="btn btn-warning">Editar</a>
-                </td>
-                <td class="text-center">
-                     <button class="btn btn-danger" onclick="confirmarEliminacion(<?php echo $producto['id']; ?>)">Eliminar</button>
-                </td>
-            </tr>
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <a href="producto.php?id=<?php echo $producto['id']; ?>">
+                    <div class="card h-100">
+                    <img src="img/productos/RaccoonFlexi/img1.jpg" class="card-img-top " alt="...">
+                    <div class="card-body">
+                        <div class="c-cardT">
+                        <div>
+                        <h5 class="card-title"><?php echo $producto['nombre']; ?></h5>
+                        </div>
+                        <div>
+                        <h5 class="card-title"><?php echo $producto['precio']; ?>$</h5>
+                        </div>
+                        </div>
+                        
+                        <p class="card-text">
+                        <?php echo $producto['descripcion_corta']; ?>
+                        </p>
+                    </div>
+                    </div>
+                    </a>
+                </div>
            <?php } ?>
 
 
+
+  
 <script src="assets/css/sweetalert2.min.css"></script>
 <script>
 function confirmarEliminacion(id) {

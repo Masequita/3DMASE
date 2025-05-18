@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($stmt->execute()) {
         echo json_encode(['success' => true, 'message' => 'Producto actualizado correctamente.']);
+        header("Location: ../index.php");
         
     } else {
         echo json_encode(['success' => false, 'message' => 'Error al actualizar el Producto: ' . $stmt->error]);

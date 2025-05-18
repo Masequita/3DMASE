@@ -27,11 +27,9 @@ include("acciones/lista_de_productos.php");
                <td class="text-center"><?php echo $producto['descripcion_larga']; ?></td>
                <td class="text-center"><?php echo $producto['precio']; ?>$</td>
                <td class="text-center"><?php echo $producto['cantidad']; ?></td>
-                <td>
-                     <a href="acciones/editar.php?id=<?php echo $producto['id']; ?>" class="btn btn-warning">Editar</a>
-                </td>
-                <td class="text-center">
-                     <button class="btn btn-danger" onclick="confirmarEliminacion(<?php echo $producto['id']; ?>)">Eliminar</button>
+                <td class="text-center ">
+                    <a href="acciones/editar.php?id=<?php echo $producto['id']; ?>" class="btn btn-warning ">Editar</a>
+                     <button class="btn btn-danger " onclick="confirmarEliminacion(<?php echo $producto['id']; ?>)">Eliminar</button>
                 </td>
             </tr>
            <?php } ?>

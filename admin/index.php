@@ -59,7 +59,7 @@
                 Acciones
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Agregar Producto</a></li>
+                <li><a class="dropdown-item" href="agregar.php">Agregar Producto</a></li>
             </ul>
             </li>
         </ul>

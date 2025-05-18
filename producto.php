@@ -1,3 +1,24 @@
+<?php
+include('config/config.php');
+$id=intval($_GET['id']);
+
+//Obtener de la base de datos el producto
+// a traves del id
+$stmt=$conexion->prepare("SELECT * FROM productos WHERE id=?");
+$stmt->bind_param("i",$id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+$producto = $result->fetch_assoc();
+
+if(!$producto) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Producto no encontrado']);
+    exit;
+}
+$stmt->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +42,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="preload" href="css/estilos.css" as="style">
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="icon" href="../img/Servicios/logo.ico">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="img/Servicios/logo.ico">
 
 
 </head>
@@ -32,26 +53,26 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg c-bg navbar-dark ">
     <div class="container-fluid">
-        <a href="../index.php"> 
+        <a href="index.php"> 
             <picture class="navbar-brand">
-                <source loading="lazy"  srcset="../img/Servicios/logo.webp" type="image/webp">
-                <img loading="lazy" src="../img/Servicios/logo.jpg" alt="logo"  class="c-logo"> 
+                <source loading="lazy"  srcset="img/Servicios/logo.webp" type="image/webp">
+                <img loading="lazy" src="img/Servicios/logo.jpg" alt="logo"  class="c-logo"> 
             </picture>
         </a>
-        <a class="navbar-brand c-logoText" href="../index.php">MASE</a>
+        <a class="navbar-brand c-logoText" href="index.php">MASE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../index.php">Inicio</a>
+            <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
             </li>
             <li class="nav-item ">
-            <a class="nav-link" href="../contacto.php">Contacto</a>
+            <a class="nav-link" href="contacto.php">Contacto</a>
             </li>
             <li class="nav-item ">
-            <a class="nav-link" href="../nosotros.php">Nosotros</a>
+            <a class="nav-link" href="nosotros.php">Nosotros</a>
             </li>
         </ul>
         <form class="d-flex">
@@ -74,7 +95,7 @@
 </div>
 
 <div class="container-comprar">
-  <h1 class="c-centrado compra-titulo">Tralalero tralala</h1>
+  <h1 class="c-centrado compra-titulo"><?php echo $producto['nombre']; ?></h1>
   <div class="c-linea"></div>
   <div class="compra-info">
         <div class="compra-der">
@@ -86,13 +107,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active c-itemP">
-      <img src="../img/productos/Tralalero/img1.jpg" class="d-block w-100 c-imgP" alt="...">
+      <img src="img/productos/Tralalero/img1.jpg" class="d-block w-100 c-imgP" alt="...">
     </div>
     <div class="carousel-item c-itemP">
-      <img src="../img/productos/Tralalero/img2.jpg" class="d-block w-100 c-imgP" alt="...">
+      <img src="img/productos/Tralalero/img2.jpg" class="d-block w-100 c-imgP" alt="...">
     </div>
     <div class="carousel-item c-itemP">
-      <img src="../img/productos/Tralalero/img3.jpg" class="d-block w-100 c-imgP" alt="...">
+      <img src="img/productos/Tralalero/img3.jpg" class="d-block w-100 c-imgP" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -106,11 +127,16 @@
 </div>
     </div>
     <div class="compra-izq">
-        <h1 class="c-centrado">Precio: $300.00</h1>
-    <div class="c-10x"></div>
-    <p>
-    Con su cuerpo anaranjado, ojos expresivos y la icónica llama que arde constantemente en la punta de su cola, Charmander es uno de los Pokémon más queridos y reconocibles desde los inicios de la franquicia. Este Pokémon de tipo fuego no solo es adorable a la vista, sino que también representa determinación, coraje y el comienzo de una gran aventura para muchos entrenadores.    </p>
-    <button class="btn btn-dark btn-comprar" onclick="window.location.href='pagina-de-compra.html'">Comprar ahora</button>
+        <div class="container">
+          <h1 class="c-centrado">Precio: <?php echo $producto['precio']; ?>$</h1>
+        <div class="c-10x"></div>
+          <p>
+          <?php echo $producto['descripcion_larga']; ?>
+        </p>
+        </div>
+        <div class="ola">
+              <button class="btn btn-dark btn-comprar" onclick="window.location.href='pagina-de-compra.html'">Comprar ahora</button>
+        </div>
     </div>
     
   </div>
