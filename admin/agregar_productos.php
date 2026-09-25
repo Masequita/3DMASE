@@ -25,7 +25,14 @@ if (
 
         // Subir imagen si hay
         if (!empty($_FILES['imagen']['name'])) {
-            $imagen_nombre = basename($_FILES['imagen']['name']);
+            $extension = pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION);
+
+            // Obtener imágenes ya existentes en la carpeta, sin importar extensión
+            $archivos_existentes = glob($directorio_producto . "/img*.*");
+            $numero_imagen = count($archivos_existentes) + 1;
+
+            // Renombrar imagen como img1.jpg, img2.png, etc.
+            $imagen_nombre = "img" . $numero_imagen . "." . $extension;
             $imagen_tmp = $_FILES['imagen']['tmp_name'];
             $ruta_destino = $directorio_producto . "/" . $imagen_nombre;
 
@@ -34,7 +41,7 @@ if (
                 $stmtImg->bind_param("is", $producto_id, $imagen_nombre);
 
                 if ($stmtImg->execute()) {
-                    echo "✅ Imagen subida y guardada correctamente.";
+                    echo "✅ Imagen subida y guardada correctamente como $imagen_nombre.";
                 } else {
                     echo "❌ Error al registrar la imagen: " . $stmtImg->error;
                 }
@@ -52,6 +59,7 @@ if (
 
     $stmt->close();
     $conexion->close();
+    header("Location: ./");
 } else {
     echo "❌ Faltan datos del formulario.";
 }

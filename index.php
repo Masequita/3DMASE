@@ -119,50 +119,6 @@
           ?>
 
   <div class="col-12 col-md-6 col-lg-4">
-    <a href="productos/Racoon.php">
-    <div class="card h-100">
-      <img src="img/productos/RaccoonFlexi/img1.jpg" class="card-img-top " alt="...">
-      <div class="card-body">
-        <div class="c-cardT">
-          <div>
-          <h5 class="card-title">Raccoon Flexi</h5>
-          </div>
-          <div>
-          <h5 class="card-title">$50.00</h5>
-          </div>
-        </div>
-        
-        <p class="card-text">
-        Un mapache juguetón y totalmente articulable, ¡perfecto para crear poses y divertidas aventuras!
-        </p>
-      </div>
-    </div>
-    </a>
-  </div>
-  <div class="col-12 col-md-6 col-lg-4">
-    <a href="productos/DeerChef.php">
-    <div class="card h-100">
-      <img src="img/productos/DeerChef/img1.jpg" class="card-img-top " alt="...">
-      <div class="card-body">
-        <div class="c-cardT">
-          <div>
-          <h5 class="card-title"> Flexible Deer Chef</h5>
-          </div>
-          <div>
-          <h5 class="card-title">$150.00</h5>
-          </div>
-        </div>
-        
-        <p class="card-text">
-
-        ¡Un ciervo chef único! Con cuerpo flexible, puedes ponerlo en cualquier postura mientras prepara deliciosos platos.
-
-      </p>
-      </div>
-    </div>
-    </a>
-  </div>
-  <div class="col-12 col-md-6 col-lg-4">
     <a href="productos/tralalero.php">
     <div class="card h-100">
       <img src="img/productos/Tralalero/img1.jpg" class="card-img-top " alt="...">
@@ -184,26 +140,6 @@
     </a>
   </div>
 
-  <div class="col-12 col-md-6 col-lg-4">
-    <a href="productos/Charmander.php">
-    <div class="card h-100">
-      <img src="img/productos/Charmander/img1.jpg" class="card-img-top " alt="...">
-      <div class="card-body">
-      <div class="c-cardT">
-          <div>
-          <h5 class="card-title">Charmander</h5>
-          </div>
-          <div>
-          <h5 class="card-title">$300.00</h5>
-          </div>
-        </div>
-        
-        <p class="card-text">
-        Charmander es un pequeño Pokémon tipo fuego con una llama brillante en la punta de su cola.</p>
-      </div>
-    </div>
-    </a>
-  </div>
 </div>
 </div>
 <div class="c-200"></div>

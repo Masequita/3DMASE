@@ -26,7 +26,19 @@
 
 
 </head>
+
 <body class="no-margin compra-bg">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script >
+    function añadirAlCarrito() {
+      Swal.fire({
+        title: "Agregado!",
+        text: "El producto ha sido añadido al carrito.",
+        icon: "success",
+        confirmButtonText: "Seguir comprando",
+      });
+    }
+</script>
     
 <!--#### NAVBAR ####-->
     <header class="header">
@@ -68,7 +80,6 @@
     </div>
     </nav>
     </header>
-<!--#### NAVBAR ####-->
 <div class="c-10X">
     
 </div>
@@ -110,7 +121,7 @@
     <div class="c-10x"></div>
     <p>
     Con su cuerpo anaranjado, ojos expresivos y la icónica llama que arde constantemente en la punta de su cola, Charmander es uno de los Pokémon más queridos y reconocibles desde los inicios de la franquicia. Este Pokémon de tipo fuego no solo es adorable a la vista, sino que también representa determinación, coraje y el comienzo de una gran aventura para muchos entrenadores.    </p>
-    <button class="btn btn-dark btn-comprar" onclick="window.location.href='pagina-de-compra.html'">Comprar ahora</button>
+    <button class="btn btn-dark btn-comprar" onclick="añadirAlCarrito()">Comprar </button>
     </div>
     
   </div>

@@ -10,7 +10,7 @@ include("admin/acciones/lista_de_productos.php");
                   <div class="col-12 col-md-6 col-lg-4">
                     <a href="producto.php?id=<?php echo $producto['id']; ?>">
                     <div class="card h-100">
-                    <img src="img/productos/RaccoonFlexi/img1.jpg" class="card-img-top " alt="...">
+                    <img src="img/productos/<?php echo $producto['id']; ?>/img1.jpg" class="card-img-top c-img-card" alt="...">
                     <div class="card-body">
                         <div class="c-cardT">
                         <div>

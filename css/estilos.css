@@ -273,3 +273,7 @@ justify-content: center;
   height: 70px;
   margin-bottom: 15px;
 }
+.c-img-card{
+  height: 400px;
+  object-fit: cover;
+}
